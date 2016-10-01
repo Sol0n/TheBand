@@ -1,0 +1,824 @@
+@font-face {
+  font-family: "Lora";
+  src: local("Lora"),
+  local("Lora Bold"),
+  url("../fonts/Lora-Bold.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: local("Lora"),
+  local("Lora Italic"),
+  url("../fonts/Lora-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: local("Lora"),
+  local("Lora Regular"),
+  url("../fonts/Lora-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: local("Oswald"),
+  local("Oswald Bold"),
+  url("../fonts/Oswald-Bold.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: local("Oswald"),
+  local("Oswald Light"),
+  url("../fonts/Oswald-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: local("Oswald"),
+  local("Oswald Regular"),
+  url("../fonts/Oswald-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+html, body {
+  min-width: 1250px;
+}
+
+body {
+  color: #241c18;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  width: 1250px;
+  margin: 0 auto;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Header */
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 884px;
+  padding-top: 80px;
+  background: #937f75 url("../img/jpg/bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.menu {
+  font-family: "Lora", sans-serif;
+  font-size: 0;
+  font-weight: 500;
+}
+
+.menu__item {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 0 15px;
+}
+
+.menu__item::before {
+  content: "";
+  position: absolute;
+  top: 9px;
+  right: -1px;
+  display: block;
+  width: 5px;
+  height: 5px;
+  background: #826b60;
+  border-radius: 50%;
+}
+
+.menu__item:first-child {
+  padding-left: 0;
+}
+
+.menu__item:last-child {
+  padding-right: 0;
+}
+
+.menu__item:last-child::before {
+  display: none;
+}
+
+.menu__item:hover::after {
+  content: "";
+  display: block;
+  width: 54px;
+  height: 17px;
+  margin: 0 auto;
+  background: url("../img/png/active.png") 0 0 no-repeat;
+}
+
+.menu__link {
+  color: #241c18;
+  text-decoration: none;
+}
+
+.header__title {
+  position: absolute;
+  bottom: 200px;
+  right: 70px;
+  width: 400px;
+  height: 349px;
+  padding-top: 200px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  font-size: 100px;
+  line-height: 110px;
+  color: #e4dddb;
+  text-transform: uppercase;
+  text-align: center;
+  background: url("../img/png/words.png") center 0 no-repeat;
+}
+
+.header__title span {
+  color: #241c18;
+}
+
+/* Slider */
+
+.crew {
+  position: relative;
+  width: 100%;
+  background: #f2efed;
+}
+
+.crew__list {
+  clear: left;
+}
+
+.crew__item.person {
+  float: left;
+  outline: none;
+}
+
+.person__content {
+  padding-top: 200px;
+}
+
+.person__left {
+  position: relative;
+  float: left;
+  width: 50%;
+}
+
+.person__name {
+  position: absolute;
+  bottom: 100px;
+  right: 50px;
+  width: 300px;
+  color: #826b60;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  font-size: 100px;
+  line-height: 110px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.person__name span {
+  color: #241c18;
+}
+
+.person__right {
+  float: right;
+  width: 50%;
+  padding-top: 350px;
+  box-sizing: border-box;
+  font-weight: 400;
+}
+
+.person__title {
+  margin-bottom: 20px;
+  font-family: "Oswald", sans-serif;
+  font-size: 36px;
+  text-align: center;
+}
+
+.person__info {
+  width: 450px;
+  margin: 0 auto;
+  font-family: "Lora", sans-serif;
+  font-size: 18px;
+  line-height: 40px;
+}
+
+.slick-arrow {
+  position: absolute;
+  top: 45%;
+  width: 50px;
+  height: 91px;
+  line-height: 0;
+  background: transparent url("../img/png/arrow.png") 0 0 no-repeat;
+  outline: none;
+  border: none;
+  color: transparent;
+}
+
+.slick-arrow.slick-prev {
+  left: 0;
+  z-index: 1;
+}
+
+.slick-arrow.slick-next {
+  right: 0;
+  transform: rotate(180deg);
+}
+
+.crew .slick-dots {
+  position: absolute;
+  top: 30%;
+  right: 230px;
+}
+
+.crew .slick-dots li {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 20px;
+}
+
+.crew .slick-dots li:last-child {
+  margin-right: 0;
+}
+
+.crew .slick-dots li button {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background: #826b60;
+  font-size: 0;
+  text-transform: uppercase;
+  padding: 0;
+  opacity: 0.3;
+}
+
+.crew .slick-dots li.slick-active button {
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+.crew .slick-dots li button::before {
+  content: "A";
+  position: absolute;
+  left: -43px;
+  top: -65px;
+  width: 100px;
+  color: #826b60;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: "Lora", sans-serif;
+  transform: rotate(-90deg);
+  text-align: left;
+}
+
+.crew .slick-dots li:first-child button::before {
+  content: "vocalist";
+}
+
+.crew .slick-dots li:nth-child(2) button::before {
+  content: "guitar";
+}
+
+.crew .slick-dots li:nth-child(3) button::before {
+  content: "bass";
+}
+
+.crew .slick-dots li:nth-child(4) button::before {
+  content: "drums";
+}
+
+.crew .slick-dots li:last-child button::before {
+  content: "electronics";
+}
+
+.crew .slick-dots li button::after {
+  content: "B";
+  position: absolute;
+  left: -53px;
+  bottom: -73px;
+  width: 120px;
+  color: #826b60;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: "Lora", sans-serif;
+  transform: rotate(-90deg);
+  text-align: right;
+}
+
+.crew .slick-dots li:first-child button::after {
+  content: "Lawrie Alton";
+}
+
+.crew .slick-dots li:nth-child(2) button::after {
+  content: "Charles Timmy";
+}
+
+.crew .slick-dots li:nth-child(3) button::after {
+  content: "curt sheard";
+}
+
+.crew .slick-dots li:nth-child(4) button::after {
+  content: "Cade Ryker";
+}
+
+.crew .slick-dots li:last-child button::after {
+  content: "Tommie Brendan";
+}
+
+/* Disk Tabs */
+
+.album {
+  padding: 100px 0;
+  background: #f8f8f8;
+}
+
+.album__discography {
+  font-family: "Oswald", sans-serif;
+}
+
+.album__item {
+  margin-bottom: 30px;
+}
+
+.album__title {
+  margin-bottom: 30px;
+}
+
+.title {
+  font-family: "Oswald", sans-serif;
+  color: #241c18;
+  font-weight: 400;
+  font-size: 36px;
+}
+
+.album__name, .album__year {
+  display: inline-block;
+  vertical-align: top;
+  font-weight: 300;
+  font-size: 30px;
+  color: #241c18;
+}
+
+.album__name {
+  min-width: 275px;
+}
+
+.album__year {
+  position: relative;
+  margin-right: 65px;
+  padding-left: 55px;
+}
+
+.album__year::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 0;
+  background: #e4dddb;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.album__btn {
+  display: inline-block;
+  vertical-align: top;
+  padding: 5px 15px;
+  margin-top: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.album__btn--light {
+  color: #826b60;
+  background: #e4dddb;
+  margin-right: 30px;
+}
+
+.album__btn--light:hover {
+  background: #d8d1cf;
+}
+
+.album__btn--dark {
+  background: #826b60;
+  color: #e4dddb;
+}
+
+.album__btn--dark:hover {
+  background: #725d53;
+}
+
+.album__left {
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.album__right {
+  float: right;
+  width: 50%;
+  padding-left: 100px;
+  box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
+}
+
+.album__action .album__title {
+  margin-bottom: 10px;
+}
+
+.album__song {
+  margin-top: 15px;
+  font-family: "Lora", sans-serif;
+  color: #826b60;
+  font-style: italic;
+  font-size: 18px;
+}
+
+.album__controls {
+  width: 340px;
+  font-size: 0;
+  margin: 35px auto 25px auto;
+}
+
+.album__ctrl-btn {
+  height: 45px;
+  cursor: pointer;
+  background: url("../img/png/controls.png") 0 0 no-repeat;
+  opacity: 0.5;
+}
+
+.album__ctrl-btn:hover {
+  opacity: 1;
+}
+
+.album__action {
+  min-height: 290px;
+}
+
+.album__prev {
+  width: 60px;
+  float: left;
+}
+
+.album__play {
+  background-position: -64px 0;
+  width: 40px;
+  display: block;
+  vertical-align: top;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.album__next {
+  float: right;
+  width: 60px;
+  transform: rotate(180deg);
+}
+
+.album__toggle {
+  width: 100%;
+  height: 10px;
+  background: #937f75;
+  border-radius: 5px;
+}
+
+.album__song-item {
+  margin-bottom: 9px;
+}
+
+.album__song-item .album__song {
+  position: relative;
+  float: left;
+  margin: 0;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+.album__song-item .album__song::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid #e4dddb;
+}
+
+.album__song-item.active .album__song::before {
+  border-left: 8px solid #826b60;
+}
+
+.album__song-item .album__song:hover::before {
+  border-left: 8px solid #826b60;
+}
+
+.album__time {
+  position: relative;
+  float: right;
+  font-family: "Lora", sans-serif;
+  color: #826b60;
+  font-style: italic;
+  font-size: 18px;
+}
+
+.album__time::before {
+  content: "";
+  position: absolute;
+  left: -202px;
+  top: 10px;
+  width: 190px;
+  height: 1px;
+  background: url("../img/png/line.png") 0 0 no-repeat;
+}
+
+/* tour */
+
+.tours {
+  position: relative;
+  padding: 80px 0;
+  width: 100%;
+  background: #f1eeed;;
+}
+
+.tours__title {
+  text-align: center;
+}
+
+.tours__wrap {
+  height: 460px;
+}
+
+.tours__list {
+  width: 100%;
+  margin: 0 auto;
+  border-right: 2px solid #e4dddb;
+  transform: translateY(235px) rotate(270deg);
+}
+
+.tour {
+  position: relative;
+  margin-bottom: 40px;
+  padding-right: 25px;
+  text-align: right;
+  text-transform: uppercase;
+  color: #826b60;
+}
+
+.tour:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -8px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #826b60;
+  transform: translateY(-50%);
+}
+
+.tour--current {
+  color: #241c18;
+}
+
+.tour--current:after {
+  background-color: #241c18;
+}
+
+.tour--past {
+  color: #e4dddb;
+}
+
+.tour--past:after {
+  background-color: #e4dddb;
+}
+
+.btn--ticket {
+  position: absolute;
+  right: 30px;
+  bottom: 28px;
+  width: 125px;
+  height: 36px;
+  color: #f8f8f8;
+  background: #826b60;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Oswald", sans-serif;
+  cursor: pointer;
+  border: none;
+}
+
+.tours__list-buy {
+  width: 100%;
+  height: 320px;
+  overflow-y: scroll;
+
+}
+
+::-webkit-scrollbar {
+  background: #eae5e3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbc2bd;
+  cursor: pointer;
+}
+
+.tours__list-buy ul li {
+  position: relative;
+  width: 85%;
+  margin: 0 auto;
+  padding: 20px 30px 20px 30px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-image: url("../img/png/border-image-2.png") 8 repeat;
+}
+
+.tour__place {
+  margin-left: 45px;
+  font-family: "Oswald", sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  color: #241c18;
+  text-transform: capitalize;
+}
+
+.tour__day {
+  font-family: "Oswald", sans-serif;
+  font-size: 50px;
+  font-weight: 500;
+}
+
+.tour__date {
+  display: inline-block;
+  font-family: "Oswald", sans-serif;
+  font-size: 23px;
+  line-height: 23px;
+  font-weight: 500;
+  margin-left: 5px;
+  text-transform: uppercase;
+}
+
+/* footer */
+
+.footer {
+  position: relative;
+  width: 100%;
+  height: 964px;
+  padding-top: 180px;
+  background: url("../img/jpg/footer.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.footer .container {
+  position: relative;
+  height: 100%;
+}
+
+.footer__contacts {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.footer__phone {
+  margin-bottom: 30px;
+  font-family: "Oswald", sans-serif;
+  font-size: 80px;
+  line-height: 100px;
+  font-weight: 500;
+  color: #241c18;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.footer__phone span {
+  display: block;
+  padding-bottom: 20px;
+  color: #e4dddb;
+  border-image: url("../img/png/border-image-3.png") 10 repeat;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+.footer__form {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.footer__form label {
+  display: inline-block;
+  padding: 0 35px;
+  height: 54px;
+  vertical-align: bottom;
+  font-family: "Oswald", sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+  text-transform: uppercase;
+  background-color: #241c18;
+  color: #e4dddb;
+}
+
+.footer__form input {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-left: -5px;
+  padding-left: 20px;
+  width: 300px;
+  height: 54px;
+  color: #e4dddb;
+  box-sizing: border-box;
+  border: 6px solid #241c18;
+  background: transparent;
+  outline: none;
+}
+
+.link-social {
+  display: inline-block;
+  width: 65px;
+  height: 65px;
+  margin-left: 40px;
+  background: url("../img/png/sprite.png") no-repeat;
+}
+
+.link-social--fb {
+  background-position: 13px -288px;
+}
+
+.link-social--youtube {
+  background-position: -10px -355px;
+  margin-left: 20px;
+}
+
+.footer__bottom {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+  padding: 0 30px;
+  box-sizing: border-box;
+  font-family: "Lora", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #e4dddb;
+  text-transform: uppercase;
+}
+
+.copyright {
+  float: left;
+  margin: 0;
+  min-height: 50px;
+}
+
+.menu--footer {
+  float: right;
+}
+
+.menu--footer .menu__link {
+  color: #e4dddb;
+}
+
+.menu--footer .menu__item {
+  min-height: 50px;
+}
